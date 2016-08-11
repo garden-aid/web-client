@@ -1,0 +1,8 @@
+version: v1.5.2
+ignore: {}
+patch:
+  'npm:tough-cookie:20160722':
+    - webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2016-08-11T21:07:23.476Z'
+    - webpack-stream > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
+        patched: '2016-08-11T21:07:23.476Z'

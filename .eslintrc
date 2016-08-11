@@ -1,0 +1,17 @@
+{
+  "extends": "eslint-config-airbnb",
+  "rules": {
+    "no-amd": 0,
+  },
+  "plugins": [
+    "react", "import"
+  ],
+  "settings": {
+    "import/parser": "babel-eslint",
+    "import/resolve": {
+      "moduleDirectory": ["node_modules", "src"]
+    }
+  },
+  "globals": {
+  }
+}
