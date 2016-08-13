@@ -5,14 +5,13 @@ import ReactDOM from 'react-dom';
 
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import useScroll from 'scroll-behavior/lib/useStandardScroll';
+import withScroll from 'scroll-behavior';
 
 import ApolloClient, { createNetworkInterface } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 
 import createAppStore from './redux/create';
 import getRoutes from './routes';
-
 
 const networkInterface = createNetworkInterface(GRAPHQL_URL);
 
@@ -22,7 +21,7 @@ const apolloClient = new ApolloClient({
 
 const rootEl = document.getElementById('app');
 
-const scrollBrowserHistory = useScroll(() => browserHistory)();
+const scrollBrowserHistory = withScroll(browserHistory);
 const store = createAppStore(scrollBrowserHistory, apolloClient);
 const history = syncHistoryWithStore(scrollBrowserHistory, store);
 

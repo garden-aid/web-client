@@ -17,9 +17,13 @@ fi
 echo "Deploying from branch $BRANCH to stage $STAGE"
 
 if [ $STAGE == 'prod' ] ; then
-  npm run build
-  firebase deploy -P garden-aid-production
+  BUILD_TASK="build"
+  FIREBASE_PROJECT=garden-aid-production
 else
-  npm run build:dev
-  firebase deploy -P garden-aid-dev
+  BUILD_TASK="build:dev"
+  FIREBASE_PROJECT=garden-aid-dev
 fi
+
+npm run $BUILD_TASK
+
+firebase deploy -P $FIREBASE_PROJECT
