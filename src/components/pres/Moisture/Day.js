@@ -19,10 +19,18 @@ export default function Day({ days }) {
     }],
   };
 
+  const options = {
+    scales: {
+      xAxes: [{
+        type: 'time',
+      }],
+    },
+  };
+
   return (
     <div className="widget">
       <div className="widget-body">
-        <Line data={data} />
+        <Line data={data} options={options} />
       </div>
     </div>
   );
