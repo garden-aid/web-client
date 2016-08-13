@@ -12,6 +12,7 @@ export const DayContainer = connect({
           }
         }`,
         variables: {},
+        pollInterval: 1000 * 30, // 30 seconds
       },
     };
   },
