@@ -43,6 +43,7 @@
     "react-bootstrap": "^0.30.2",
     "react-chartjs-2": "^1.1.7",
     "react-helmet": "^3.1.0",
+    "react-redux": "^4.4.5",
     "react-router": "^2.6.0",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
