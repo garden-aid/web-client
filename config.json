@@ -1,6 +1,10 @@
 {
   "API_GATEWAY": {
     "development": "https://6ner9yz7ch.execute-api.ap-southeast-2.amazonaws.com/dev",
-    "production": "https://ty1o4clkni.execute-api.ap-southeast-2.amazonaws.com/prod"
+    "production": "https://uvkv763iuc.execute-api.ap-southeast-2.amazonaws.com/prod"
+  },
+  "AUTH0": {
+    "domain": "johncmckim.au.auth0.com",
+    "clientId": "SWLx5XS17ssom0DCuTPlDlXnJUbTXbiP"
   }
 }

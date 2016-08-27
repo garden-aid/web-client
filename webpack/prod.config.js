@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'source-map',
 
   entry: {
-    main: ['./src/index'],
+    main: ['babel-polyfill', './src/index'],
   },
 
   module: {
