@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 import { connect } from 'react-apollo';
 import Day from '../../pres/Moisture/Day';
 
-export const DayContainer = connect({
+export default connect({
   mapQueriesToProps({ ownProps, state }) { // eslint-disable-line no-unused-vars
     return {
       days: {
@@ -16,7 +16,4 @@ export const DayContainer = connect({
       },
     };
   },
-  //mapStateToProps(state) {
-  //  return {};
-  //},
 })(Day);

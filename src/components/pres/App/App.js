@@ -1,5 +1,5 @@
 
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 
 import Helmet from 'react-helmet';
 
@@ -9,40 +9,31 @@ import rdash from 'static/rdash/css/rdash.css';
 
 import SideBar from './SideBar.js';
 
-export default class App extends Component {
+import NavBar from '../../containers/App/NavBar';
 
-  static propTypes = {
-    children: PropTypes.object.isRequired,
-  }
-
-  static contextTypes = {
-    store: PropTypes.object.isRequired,
-  }
-
-  render() {
-    return (
-      <div>
-        <Helmet {...config.app.head}/>
-        <div id="page-wrapper" className="open">
-          <SideBar />
-          <div id="content-wrapper">
-            <div className="page-content">
-              <div className="row header">
-                <div className="col-xs-12">
-                  <div className="meta">
-                    <div className="page">
-                      Dashboard
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                {this.props.children}
-              </div>
-            </div>
+const App = ({ children }) => (
+  <div>
+    <Helmet {...config.app.head} />
+    <div id="page-wrapper" className="open">
+      <SideBar />
+      <div id="content-wrapper">
+        <div className="page-content">
+          <NavBar />
+          <div>
+            {children}
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  </div>
+);
+
+App.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+App.contextTypes = {
+  store: PropTypes.object.isRequired,
+};
+
+export default App;
