@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'eval-cheap-module-source-map',
 
   entry: {
-    main: ['webpack-hot-middleware/client', './src/index'],
+    main: ['webpack-hot-middleware/client', 'babel-polyfill', './src/index'],
   },
 
   resolve: {

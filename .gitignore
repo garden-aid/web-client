@@ -1,4 +1,5 @@
 # App Build
+config.json
 public/dist/
 
 # Webpack
