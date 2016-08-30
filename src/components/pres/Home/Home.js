@@ -8,7 +8,7 @@ const Home = ({ isAuthenticated }) => (
   <div className="row">
     <Helmet title="Home" />
     <div className="col-md-12">
-      {isAuthenticated ? <Day /> : 'Please login'}
+      {isAuthenticated ? <Day hours={1} clientId="garden-aid-client-test-js" /> : 'Please login'}
     </div>
   </div>
 );

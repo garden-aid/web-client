@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Line } from 'react-chartjs-2';
 
-export default function Day({ days }) {
+const Day = ({ days }) => {
   const items = days.day || [];
 
   if (days.loading) {
@@ -34,4 +34,16 @@ export default function Day({ days }) {
       </div>
     </div>
   );
-}
+};
+
+Day.propTypes = {
+  days: PropTypes.shape({
+    loading: PropTypes.bool,
+    day: PropTypes.arrayOf(PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      moisture: PropTypes.number.isRequired,
+    })),
+  }).isRequired,
+};
+
+export default Day;
