@@ -2,14 +2,14 @@ import { PropTypes } from 'react';
 
 import gql from 'graphql-tag';
 import { connect } from 'react-apollo';
-import Day from '../../pres/Moisture/Day';
+import MoistureChart from '../../pres/Moisture/Chart';
 
-const DayContainer = connect({
+const MoistureChartContainer = connect({
   mapQueriesToProps({ ownProps, state }) { // eslint-disable-line no-unused-vars
     return {
-      days: {
+      moisture: {
         query: gql`{
-          day(hours: ${ownProps.hours}, clientId: "${ownProps.clientId}") {
+          moisture(hours: ${ownProps.hours}, clientId: "${ownProps.clientId}") {
             date, moisture
           }
         }`,
@@ -18,12 +18,12 @@ const DayContainer = connect({
       },
     };
   },
-})(Day);
+})(MoistureChart);
 
 
-DayContainer.propTypes = {
+MoistureChartContainer.propTypes = {
   hours: PropTypes.number.isRequired,
   clientId: PropTypes.string.isRequired,
 };
 
-export default DayContainer;
+export default MoistureChartContainer;

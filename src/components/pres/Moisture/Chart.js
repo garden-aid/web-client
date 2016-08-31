@@ -1,10 +1,10 @@
 import React, { PropTypes } from 'react';
 import { Line } from 'react-chartjs-2';
 
-const Day = ({ days }) => {
-  const items = days.day || [];
+const MoistureChart = ({ moisture }) => {
+  const items = moisture.moisture || [];
 
-  if (days.loading) {
+  if (moisture.loading) {
     return (
       <p>Loading...</p>
     );
@@ -36,14 +36,14 @@ const Day = ({ days }) => {
   );
 };
 
-Day.propTypes = {
-  days: PropTypes.shape({
+MoistureChart.propTypes = {
+  moisture: PropTypes.shape({
     loading: PropTypes.bool,
-    day: PropTypes.arrayOf(PropTypes.shape({
+    moisture: PropTypes.arrayOf(PropTypes.shape({
       date: PropTypes.string.isRequired,
       moisture: PropTypes.number.isRequired,
     })),
   }).isRequired,
 };
 
-export default Day;
+export default MoistureChart;
