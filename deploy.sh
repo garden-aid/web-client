@@ -24,6 +24,9 @@ else
   FIREBASE_PROJECT=garden-aid-dev
 fi
 
+echo "Running build: $BUILD_TASK"
 npm run $BUILD_TASK
+
+echo 'Deploying to firebase'
 
 firebase deploy -P $FIREBASE_PROJECT
