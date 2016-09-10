@@ -17,6 +17,22 @@ import { checkLogin } from './actions';
 
 const networkInterface = createNetworkInterface(GRAPHQL_URL);
 
+networkInterface.use([{
+  /* eslint-disable no-param-reassign */
+  applyMiddleware(req, next) {
+    if (!req.options.headers) {
+      req.options.headers = {}; // Create the header object if needed.
+    }
+    // get the authentication token from local storage if it exists
+    const idToken = localStorage.getItem('idToken') || null;
+    if (idToken) {
+      req.options.headers.authorization = `Bearer '${idToken}`;
+    }
+    next();
+  },
+  /* eslint-enable no-param-reassign */
+}]);
+
 const client = new ApolloClient({
   networkInterface,
 });
