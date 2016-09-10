@@ -26,7 +26,7 @@ networkInterface.use([{
     // get the authentication token from local storage if it exists
     const idToken = localStorage.getItem('idToken') || null;
     if (idToken) {
-      req.options.headers.authorization = `Bearer '${idToken}`;
+      req.options.headers.Authorization = `Bearer ${idToken}`;
     }
     next();
   },
