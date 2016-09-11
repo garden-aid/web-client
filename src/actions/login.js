@@ -1,4 +1,6 @@
-import { auth0Lock, authLocalStore } from '../auth';
+import { push } from 'react-router-redux'
+
+import { auth0Lock, authLocalStore } from 'src/auth';
 
 export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -30,9 +32,7 @@ function getProfile(dispatch, token) {
 }
 
 export const checkLogin = (dispatch) => {
-  console.log('Setting up login check');
   auth0Lock.on('authenticated', (authResult) => {
-    console.log('authenticated', authResult);
     getProfile(dispatch, authResult.idToken);
   });
 };
@@ -43,8 +43,9 @@ export const login = () => (dispatch) => {
     getProfile(dispatch, authData.token);
   } else {
     dispatch(requestLogin());
-
-    // checkLogin(dispatch);
-    auth0Lock.show();
   }
+};
+
+export const redirectToHome = () => (dispatch) => {
+  dispatch(push('/'));
 };
