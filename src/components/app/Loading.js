@@ -1,10 +1,10 @@
 import React from 'react';
-import { CircularProgress } from 'material-ui';
+import { Spinner } from 'react-mdl';
 
 export default function UnderConstruction() {
   return (
     <div>
-      <CircularProgress />
+      <Spinner />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-import { CircularProgress } from 'material-ui';
+import { Spinner } from 'react-mdl';
 
 export default React.createClass({
   propTypes: {
@@ -16,7 +16,7 @@ export default React.createClass({
   },
 
   renderLoading() {
-    return (<CircularProgress />)
+    return (<Spinner />)
   },
 
   renderError() {

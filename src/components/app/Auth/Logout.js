@@ -1,10 +1,10 @@
 
 import React, { PropTypes } from 'react';
 
-import { FlatButton } from 'material-ui';
+import { Button } from 'react-mdl';
 
 const Logout = ({ onLogoutClick }) => (
-  <FlatButton label="Logout" primary={true} onClick={onLogoutClick} />
+  <Button label="Logout" primary onClick={onLogoutClick} />
 );
 
 Logout.propTypes = {

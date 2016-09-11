@@ -1,13 +1,15 @@
 import React from 'react';
 
+import { Grid, Cell} from 'react-mdl';
+
 import MoistureChart from 'src/components/moisture/ChartContainer';
 
 const Dashboard = () => (
-  <div className="row">
-    <div className="col-md-12">
+  <Grid className="demo-grid-ruler">
+    <Cell col={3}>
       <MoistureChart hours={1} clientId="garden-aid-client-test-js" />
-    </div>
-  </div>
+    </Cell>
+  </Grid>
 );
 
 export default Dashboard;

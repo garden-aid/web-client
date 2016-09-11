@@ -5,22 +5,18 @@ import Helmet from 'react-helmet';
 
 import config from 'src/config';
 
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Layout } from 'react-mdl';
 
 import NavBar from './NavBarContainer';
+import Footer from './Footer';
 
 const AppLayout = ({ children }) => (
-  <MuiThemeProvider>
-    <div>
-      <Helmet {...config.app.head} />
-      <div>
-        <NavBar />
-        <div>
-          {children}
-        </div>
-      </div>
-    </div>
-  </MuiThemeProvider>
+  <Layout fixedHeader>
+    <Helmet {...config.app.head} />
+    <NavBar />
+    {children}
+    <Footer />
+  </Layout>
 );
 
 AppLayout.propTypes = {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { FlatButton } from 'material-ui';
+import { Button } from 'react-mdl';
 
 const Login = () => (
-  <FlatButton label="Login" primary={true} href="/login" />
+  <Button label="Login" primary href="/login" />
 );
 
 export default Login;

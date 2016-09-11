@@ -5,6 +5,7 @@ import SideBar from './SideBar.js';
 
 const PanelLayout = ({ children }) => (
   <div>
+    <SideBar />
     <div>
       {children}
     </div>
