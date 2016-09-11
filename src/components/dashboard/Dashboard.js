@@ -1,15 +1,44 @@
 import React from 'react';
 
-import { Grid, Cell} from 'react-mdl';
+import Dashboard from 'react-dazzle';
+
+import 'react-dazzle/lib/style/style.css';
 
 import MoistureChart from 'src/components/moisture/ChartContainer';
 
-const Dashboard = () => (
-  <Grid className="demo-grid-ruler">
-    <Cell col={3}>
-      <MoistureChart hours={1} clientId="garden-aid-client-test-js" />
-    </Cell>
-  </Grid>
-);
+const DashboardPage = React.createClass({
+  getInitialState() {
+    return {
+      widgets: {
+        MoistureChart: {
+          type: MoistureChart,
+          title: 'Moisture Chart',
+          props: {
+            clientId: 'garden-aid-client-test-js',
+            hours: 1,
+          },
+        },
+      },
+      layout: {
+        rows: [{
+          columns: [{
+            className: 'mdl-cell mdl-cell--4-col',
+            widgets: [{ key: 'MoistureChart' }],
+          }],
+        }],
+      },
+    };
+  },
 
-export default Dashboard;
+  render() {
+    return (
+      <Dashboard
+        // rowClass="mdl-grid"
+        widgets={this.state.widgets}
+        layout={this.state.layout}
+      />
+    );
+  },
+});
+
+export default DashboardPage;

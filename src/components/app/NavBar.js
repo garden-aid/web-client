@@ -12,6 +12,9 @@ const NavBar = (props) => {
   return (
     <Header title="Garden Aid">
       <Navigation>
+        <a href="/">Dashboard</a>
+        <a href="/devices">Devices</a>
+        <a href="/rules">Rules</a>
         {authButton}
       </Navigation>
     </Header>

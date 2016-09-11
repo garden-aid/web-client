@@ -22,6 +22,7 @@ export default (store) => ( // eslint-disable-line no-unused-vars
     <Route path="/" component={PanelLayout} onEnter={requireAuth(store)}>
       <IndexRoute component={Dashboard} />
       <Route path="/devices" component={UnderConstruction} />
+      <Route path="/rules" component={UnderConstruction} />
     </Route>
     <Route path="/login" component={Login} />
     <Route path="/callback" component={Callback} />

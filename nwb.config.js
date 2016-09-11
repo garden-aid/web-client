@@ -12,17 +12,16 @@ module.exports = {
       constants: path.resolve(srcPath, 'constants'),
     },
     resolve: {
-      extensions: ['', '.js', '.json', '.scss', '.css'],
+      extensions: ['', '.js', '.jsx', '.json', '.scss', '.css'],
     },
     extractText: {
       allChunks: true,
     },
-    loaders: {
-      sass: {
-        test: /\.scss$/,
-        loader: 'style!css!resolve-url!sass',
-      },
-    },
+    // loaders: {
+    //   babel: {
+    //     exclude: /node_modules\/(?![react\-dazzle])/
+    //   }
+    // },
     sassLoader: {
       includePaths: [
         nodeModulesPath,

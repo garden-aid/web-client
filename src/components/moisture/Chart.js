@@ -35,7 +35,7 @@ const MoistureChart = ({ moisture }) => {
   return (
     <div className="widget">
       <div className="widget-body">
-        <Line data={data} options={options} />
+        <Line data={data} options={options} height={210} width={400} />
       </div>
     </div>
   );
