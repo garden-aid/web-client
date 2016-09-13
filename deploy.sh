@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+if [[ $TRAVIS_PULL_REQUEST == "true" ]]; then
+  echo "Not deploying changes on pull request";
+  exit 0;
+fi
+
 BRANCH=${TRAVIS_BRANCH:-$(git rev-parse --abbrev-ref HEAD)}
 
 if [[ $BRANCH == 'master' ]]; then
@@ -17,15 +22,13 @@ fi
 echo "Deploying from branch $BRANCH to stage $STAGE"
 
 if [ $STAGE == 'prod' ] ; then
-  BUILD_TASK="build"
   FIREBASE_PROJECT=garden-aid-production
 else
-  BUILD_TASK="build:dev"
   FIREBASE_PROJECT=garden-aid-dev
 fi
 
-echo "Running build: $BUILD_TASK"
-npm run $BUILD_TASK
+echo 'Running build'
+npm run build
 
 echo 'Deploying to firebase'
 
