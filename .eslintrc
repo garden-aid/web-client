@@ -2,6 +2,7 @@
   "extends": "eslint-config-airbnb",
   "rules": {
     "no-amd": 0,
+    "react/jsx-filename-extension": 0
   },
   "plugins": [
     "react", "import"

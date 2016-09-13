@@ -2,8 +2,6 @@ import config from '../../config.json';
 
 const auth0 = config.AUTH0;
 
-console.log(config);
-
 export const APIGW_URL = config.API_GATEWAY[process.env.NODE_ENV];
 
 if (!APIGW_URL) {
