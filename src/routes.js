@@ -1,7 +1,7 @@
 import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 
-import { AppLayout, Callback, Login, PanelLayout, NotFound, UnderConstruction } from './components/app';
+import { Layout, Callback, Login, NotFound, UnderConstruction } from './components/app';
 import Dashboard from './components/dashboard/Dashboard';
 
 function requireAuth(store) {
@@ -18,8 +18,8 @@ function requireAuth(store) {
 }
 
 export default (store) => ( // eslint-disable-line no-unused-vars
-  <Route component={AppLayout}>
-    <Route path="/" component={PanelLayout} onEnter={requireAuth(store)}>
+  <Route component={Layout}>
+    <Route path="/" onEnter={requireAuth(store)}>
       <IndexRoute component={Dashboard} />
       <Route path="/devices" component={UnderConstruction} />
       <Route path="/rules" component={UnderConstruction} />

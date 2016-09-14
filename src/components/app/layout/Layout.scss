@@ -1,0 +1,38 @@
+
+$avatar-size: 80px;
+$avatar-vertical-margin: 15px;
+
+.user-info {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+
+  .user-info-avatar {
+    height: $avatar-size;
+    width: $avatar-size;
+    margin: $avatar-vertical-margin auto;
+    border-radius: 50%;
+  }
+
+  .user-info-dropdown {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    .user-info-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+
+      .user-info-name {
+        flex: 1;
+        padding: 0 10px;
+      }
+    }
+  }
+}

@@ -32,7 +32,7 @@
     "react": "^15.3.1",
     "react-apollo": "^0.3.19",
     "react-chartjs-2": "^1.1.7",
-    "react-dazzle": "^1.2.2",
+    "react-dazzle": "^1.2.3",
     "react-dom": "^15.3.1",
     "react-helmet": "^3.1.0",
     "react-mdl": "^1.7.1",
