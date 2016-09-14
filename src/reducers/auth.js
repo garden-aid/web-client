@@ -8,6 +8,7 @@ import { authLocalStore } from '../auth';
 const defaultStateAuth = {
   isFetching: false,
   isAuthenticated: authLocalStore.isAuthenticated(),
+  profile: authLocalStore.getStoredAuthData().profile,
 };
 
 export default (state = defaultStateAuth, action) => {
@@ -24,6 +25,7 @@ export default (state = defaultStateAuth, action) => {
         ...state,
         isFetching: false,
         isAuthenticated: true,
+        profile: action.profile,
       };
     case LOGIN_FAILURE:
       return {

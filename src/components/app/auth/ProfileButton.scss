@@ -1,0 +1,24 @@
+
+$avatar-size: 40px;
+
+.profile-button {
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(63, 78, 156);
+    cursor: pointer;
+  }
+
+  .profile-name {
+    margin-left: 10px;
+  }
+
+  .avatar-img {
+    height: $avatar-size;
+    width: $avatar-size;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+}

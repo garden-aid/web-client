@@ -7,6 +7,7 @@ import NavBar from './NavBar';
 const mapStateToProps = state => ({
   errorMessage: state.auth.errorMessage,
   isAuthenticated: state.auth.isAuthenticated,
+  profile: state.auth.profile,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,8 +1,15 @@
 import React from 'react';
-import { Button } from 'react-mdl';
 
-const Login = () => (
-  <Button label="Login" primary href="/login" />
-);
+import { auth0Lock } from 'src/auth';
 
-export default Login;
+export default React.createClass({
+  componentDidMount() {
+    auth0Lock.show()
+  },
+
+  render: () => (
+    <div>
+      <div id="auth0-form" />
+    </div>
+  ),
+});
