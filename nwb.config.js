@@ -18,6 +18,9 @@ module.exports = {
     extractText: {
       allChunks: true,
     },
+    define: {
+      __STAGE__: JSON.stringify(process.env.STAGE) || 'dev',
+    },
     // loaders: {
     //   babel: {
     //     exclude: /node_modules\/(?![react\-dazzle])/
