@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { auth0Lock } from 'src/auth';
 
-export default React.createClass({
+export default class Login extends Component {
   componentDidMount() {
     auth0Lock.show();
-  },
+  }
 
-  render: () => (
-    <div>
-      <div id="auth0-form" />
-    </div>
-  ),
-});
+  render() {
+    return (
+      <div>
+        <div id="auth0-form" />
+      </div>
+    );
+  }
+}
