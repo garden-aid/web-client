@@ -1,8 +1,8 @@
 import config from '../../config.json';
 
-const auth0 = config.AUTH0;
+const stage = __STAGE__ || 'dev';
 
-const stage = __STAGE__;
+const auth0 = config.AUTH0;
 
 console.log('Getting config for stage ', stage);
 
@@ -12,6 +12,7 @@ if (!APIGW_URL) {
   throw new Error('API GATEWAY not implemented');
 }
 
+export const STAGE = stage;
 export const GRAPHQL_URL = `${APIGW_URL}/graphql`;
 export const AUTH0_DOMAIN = auth0.domain;
 export const AUTH0_CLIENT_ID = auth0.clientId;

@@ -19,7 +19,7 @@ module.exports = {
       allChunks: true,
     },
     define: {
-      __STAGE__: JSON.stringify(process.env.STAGE) || 'dev',
+      __STAGE__: process.env.STAGE
     },
     // loaders: {
     //   babel: {
