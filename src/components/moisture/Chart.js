@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
+import { Slider } from 'react-mdl';
 import { Line } from 'react-chartjs-2';
 
-const MoistureChart = ({ moisture }) => {
+const MoistureChart = ({ moisture, hours, onHoursChange }) => {
   if (!moisture) {
     return (
       <p>Error loading chart.</p>
@@ -40,6 +41,16 @@ const MoistureChart = ({ moisture }) => {
 
   return (
     <div className="widget">
+      <div className="widget-header">
+        <div className="widget-controls">
+          <Slider
+            min={1}
+            max={48}
+            defaultValue={hours}
+            onChange={evt => onHoursChange(evt.target.value)}
+          />
+        </div>
+      </div>
       <div className="widget-body">
         <Line data={data} options={options} height={210} width={400} />
       </div>
@@ -55,6 +66,8 @@ MoistureChart.propTypes = {
       moisture: PropTypes.number.isRequired,
     })),
   }).isRequired,
+  hours: PropTypes.number.isRequired,
+  onHoursChange: PropTypes.func.isRequired,
 };
 
 export default MoistureChart;

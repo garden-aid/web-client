@@ -16,7 +16,6 @@ const DashboardPage = React.createClass({
           title: 'Moisture Chart',
           props: {
             clientId: 'garden-aid-client-test-js',
-            hours: 1,
           },
         },
       },
