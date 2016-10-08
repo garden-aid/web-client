@@ -1,7 +1,11 @@
 import { PropTypes } from 'react';
+import { bindActionCreators } from 'redux';
 
 import gql from 'graphql-tag';
 import { connect } from 'react-apollo';
+
+import { updateHours } from 'src/actions';
+
 import MoistureChart from './Chart';
 
 const MoistureChartContainer = connect({
@@ -9,7 +13,7 @@ const MoistureChartContainer = connect({
     return {
       moisture: {
         query: gql`{
-          moisture(hours: ${ownProps.hours}, clientId: "${ownProps.clientId}") {
+          moisture(hours: ${state.dashboard.hours}, clientId: "${ownProps.clientId}") {
             date, moisture
           }
         }`,
@@ -18,11 +22,20 @@ const MoistureChartContainer = connect({
       },
     };
   },
+  mapStateToProps({ state }) {
+    if (!state) {
+      return { hours: 1 };
+    }
+    console.log('state', state);
+    return { hours: state.dashboard.hours };
+  },
+  mapDispatchToProps: dispatch => ({
+    onHoursChange: bindActionCreators(updateHours, dispatch),
+  }),
 })(MoistureChart);
 
 
 MoistureChartContainer.propTypes = {
-  hours: PropTypes.number.isRequired,
   clientId: PropTypes.string.isRequired,
 };
 

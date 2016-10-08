@@ -27,6 +27,8 @@ export function getStoredAuthData() {
     const idToken = localStorage.getItem(ID_TOKEN);
     const profile = JSON.parse(localStorage.getItem(PROFILE));
 
+    // TODO: Check if JWT Expired
+
     return { idToken, profile };
   } catch (err) {
     removeStoredAuthData();

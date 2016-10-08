@@ -1,7 +1,6 @@
 
-exports.AppLayout = require('./AppLayout');
-exports.Login = require('./Login');
-exports.Callback = require('./CallbackContainer');
-exports.PanelLayout = require('./PanelLayout');
+exports.Layout = require('./layout/LayoutContainer');
+exports.Login = require('./auth/LoginForm');
+exports.Callback = require('./auth/CallbackContainer');
 exports.NotFound = require('./NotFound');
 exports.UnderConstruction = require('./UnderConstruction');
