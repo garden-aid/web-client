@@ -16,11 +16,11 @@ const MoistureChart = ({ moisture }) => {
   }
 
   const data = {
-    labels: items.map((d) => d.date, []),
+    labels: items.map(d => d.date, []),
     datasets: [{
       label: 'Moisture',
       fill: true,
-      data: items.map((d) => d.moisture, []),
+      data: items.map(d => d.moisture, []),
     }],
   };
 
@@ -29,6 +29,12 @@ const MoistureChart = ({ moisture }) => {
       xAxes: [{
         type: 'time',
       }],
+    },
+    legend: {
+      display: false,
+    },
+    tooltips: {
+      enabled: false,
     },
   };
 

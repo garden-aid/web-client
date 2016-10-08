@@ -23,7 +23,7 @@ const DashboardPage = React.createClass({
       layout: {
         rows: [{
           columns: [{
-            className: 'mdl-cell mdl-cell--4-col',
+            className: 'mdl-cell mdl-cell--10-col',
             widgets: [{ key: 'MoistureChart' }],
           }],
         }],
