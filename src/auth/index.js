@@ -14,6 +14,13 @@ const options = {
     responseType: 'token',
     redirectUrl: window.location.origin + '/callback',
   },
+  theme: {
+    logo: '/images/garden-aid-logo.jpg',
+    primaryColor: '#3f51b5'
+  },
+  languageDictionary: {
+    title: 'Garden Aid'
+  },
 };
 
 const lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, options);
